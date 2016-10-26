@@ -1,14 +1,14 @@
-var url = "http://localhost:8124/";
+var url = "http://localhost:8124/insert";
 var response = null;
+var name ="Ale Su";
+var sex = "Male";
 
-var xhr=new XMLHttpRequest();
-xhr.open("GET",url,true);
-xhr.onreadystatechange=function(){
-	if(xhr.readyState==4){
-		if(xhr.status==200){
-				debugger;
-			response=xhr.responseText;
-		}
+$.ajax({
+	type : 'POST',
+	url : url,
+	data : '{"p": 5}',
+	dataType : 'json',
+	success : function (data) {
+		alert(data);
 	}
-}
-xhr.send(null);
+});
